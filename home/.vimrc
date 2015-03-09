@@ -25,14 +25,24 @@ filetype plugin indent on     " required!
 
 " Colors
 let g:solarized_termcolors=256 " for ssh terminal
-set background=dark
-colorscheme solarized
+"set background=dark
+"colorscheme solarized
 
-" Tabs
-set tabstop=4
-set shiftwidth=4
-set expandtab
 set smarttab
+
+set backspace=indent,eol,start
+set expandtab
+set shiftwidth=2
+set softtabstop=2
+set autoindent
+set selectmode=mouse
+set showmatch
+set guifont=Courier_New:h15
+set textwidth=80
+colorscheme desert
+set number
+set ruler
+set cc=+1
 
 " Line numbers duh
 set number
@@ -58,3 +68,22 @@ autocmd VimEnter * set updatetime=100
 
 " CTRLP working path mode
 let g:ctrlp_working_path_mode = 0
+
+if has('cscope')
+  set cscopetag cscopeverbose
+
+  if has('quickfix')
+    set cscopequickfix=s-,c-,d-,i-,t-,e-
+  endif
+
+  cnoreabbrev csa cs add
+  cnoreabbrev csf cs find
+  cnoreabbrev csk cs kill
+  cnoreabbrev csr cs reset
+  cnoreabbrev css cs show
+  cnoreabbrev csh cs help
+
+  command -nargs=0 Cscope cs add $VIMSRC/src/cscope.out $VIMSRC/src
+endif
+
+                          

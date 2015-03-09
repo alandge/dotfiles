@@ -41,6 +41,10 @@ source_if_exists /etc/lc.bashrc
 source_if_exists /etc/bashrc
 source_if_exists /usr/local/tools/dotkit/init.sh
 
+# MacPorts Installer addition on 2015-01-27_at_12:04:16: adding an appropriate PATH variable for use with MacPorts.
+export PATH="/opt/local/bin:/opt/local/sbin:$PATH"                                                              
+# Finished adapting your PATH environment variable for use with MacPorts.
+
 # Determine the OS
 OS=$(uname -s)
 
@@ -124,7 +128,7 @@ export HISTSIZE=10000
 # Default editor (see below for TextMate extras)
 export EDITOR="vim"
 
-# Macports setup is only done on Darwin.
+ Macports setup is only done on Darwin.
 if [ "$OS" = 'Darwin' ]; then
     #export MACPORTS_HOME=/opt/local
     export MACPORTS_HOME=$HOME/macports
@@ -133,7 +137,7 @@ if [ "$OS" = 'Darwin' ]; then
     fi
 
     # put GNU coreutils in path ahead of BSD tools
-    pathadd $MACPORTS_HOME/libexec/gnubin
+    #pathadd $MACPORTS_HOME/libexec/gnubin
 fi
 
 # Get ls set up with some decent colors.

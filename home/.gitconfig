@@ -1,6 +1,6 @@
 [user]
-	name = Alfredo Gimenez
-	email = gimenez1@llnl.gov
+	name = Aaditya Landge
+	email = aaditya@sci.utah.edu
 
 # [merge]
 # 	tool = opendiff
@@ -26,6 +26,8 @@
 
 [http]
 	postBuffer = 524288000
+[diff]
+      tool = vimdiff
 
 # [difftool]
 # 	prompt = false
