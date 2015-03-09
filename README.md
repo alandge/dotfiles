@@ -37,3 +37,17 @@ If something goes wrong, not to worry.  `link` keeps backups in `~/.dotfiles-bac
     .dotfiles/unlink
 
 Run .dotfiles/help for more information.
+
+
+Installing Vim plugins
+---------------------------------------
+
+Under the dotfiles directory
+
+git submodule update --init --recursive
+
+Now open vim and type :PluginInstall
+
+Also if you want to look up symbols, do `cscope -Rb` from shell to generate a
+cscope.out file, and then within vim do :cscope add ./cscope.out and then you
+can use `Ctrl+]` on any symbol to look it up.
